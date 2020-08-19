@@ -206,8 +206,7 @@ def main():
 
     # command input required by api
     if 'command' in module.foreman_params.keys():
-        module.foreman_params['inputs'] = {"command": f"{module.foreman_params['command']}"}
-        module.foreman_params.pop('command')
+        module.foreman_params['inputs'] = {"command": module.foreman_params.pop('command')}
 
     with module.api_connection():
         if 'bookmark' in module.foreman_params.keys():
