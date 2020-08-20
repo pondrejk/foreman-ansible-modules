@@ -205,7 +205,7 @@ def main():
     )
 
     # command input required by api
-    if 'command' in module.foreman_params.keys():
+    if 'command' in module.foreman_params:
         module.foreman_params['inputs'] = {"command": module.foreman_params.pop('command')}
 
     with module.api_connection():
